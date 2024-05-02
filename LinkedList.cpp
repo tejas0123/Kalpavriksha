@@ -68,9 +68,14 @@ Node * deleteAtRear(Node *head){
         cout<<"List is empty"<<endl;
         return head;
     }
+
+    if(head == NULL){
+        free(head);
+        return NULL;
+    }
     
     Node *currNode = head;
-    Node *prevNode = NULL;
+    Node *prevNode = head;
 
     while(currNode->next != NULL){
         prevNode = currNode;
@@ -88,7 +93,7 @@ Node * insertAtPosition(int position, int value, Node *head){
     }
     int count = 1;
     Node *currNode = head;
-    Node *prevNode = NULL;
+    Node *prevNode = head;
     if(position == 1){
         return insertAtHead(value, head);
     }

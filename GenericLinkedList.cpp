@@ -67,6 +67,11 @@ Node * deleteAtHead(Node *head){
         cout<<"List is empty<<endl";
         return head;
     }
+    if(head->next == NULL)
+    {
+        return NULL;
+    }
+    
     Node *temp = head;
     head = head->next;
     delete(temp);
@@ -93,6 +98,11 @@ Node * deleteAtRear(Node *head){
         return head;
     }
     
+    if(head->next == NULL){
+        delete(head);
+        return NULL;
+    }
+
     Node *currNode = head;
     Node *prevNode = NULL;
 
